@@ -27,5 +27,7 @@ public final static short C_DATA_DEBITO=281;
 public final static short C_CARTAO=282;
 public final static short TEXT=283;
 public final static short O_TRANSACCAO=284;
-public final static short C_TRANSACCAO=285;
+public final static short O_MATRICULA=285;
+public final static short C_TRANSACCAO=286;
+public final static short C_MATRICULA=287;
 }

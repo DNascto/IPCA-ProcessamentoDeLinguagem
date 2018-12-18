@@ -40,8 +40,16 @@
 \<CARTAO\>              { return ParserTokens.O_CARTAO; }
 \<\/CARTAO\>            { return ParserTokens.C_CARTAO; }
 
+\<MATRICULA\>              { return ParserTokens.O_MATRICULA; }
+\<\/MATRICULA\>            { return ParserTokens.C_MATRICULA; }
 \<TRANSACCAO\>          { return ParserTokens.O_TRANSACCAO; }
 \<\/TRANSACCAO\>        { return ParserTokens.C_TRANSACCAO; }
+
+
+\<TRANSACCAO\>          { return ParserTokens.O_TRANSACCAO; }
+\<\/TRANSACCAO\>        { return ParserTokens.C_TRANSACCAO; }
+
+
 
 
 [ \n\r]+         { /* ignore */ }

@@ -26,5 +26,6 @@ public class Main {
             c.addData(file);
         }
         file.println("</table>\n</body>\n</html>");
+        file.toString();
     }
 }

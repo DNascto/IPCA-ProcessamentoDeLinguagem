@@ -161,50 +161,51 @@ final ParserVal dup_yyval(ParserVal val)
 public final static short YYERRCODE=256;
 final static short yylhs[] = {                           -1,
     0,    1,    1,    2,    2,    2,    2,    2,    2,    2,
-    2,    2,    2,    2,    2,    2,    2,
+    2,    2,    2,    2,    2,    2,    2,    2,
 };
 final static short yylen[] = {                            2,
     1,    0,    2,    3,    3,    3,    3,    3,    3,    3,
-    3,    3,    3,    3,    3,    3,    3,
+    3,    3,    3,    3,    3,    3,    3,    3,
 };
 final static short yydefred[] = {                         2,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    2,    3,    0,    0,    0,
+    0,    0,    0,    0,    0,    2,    0,    3,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    4,    5,    6,    7,    8,    9,   10,   11,   12,
-   13,   14,   15,   16,   17,
+    0,    0,    0,    4,    6,    7,    8,    9,   10,   11,
+   12,   13,   14,   15,   16,   17,   18,    5,
 };
 final static short yydgoto[] = {                          1,
-    2,   17,
+    2,   18,
 };
 final static short yysindex[] = {                         0,
-    0, -244, -254, -253, -252, -251, -250, -249, -248, -247,
- -246, -245, -242, -241, -240,    0,    0, -231, -227, -226,
- -228, -225, -224, -229, -223, -230, -222, -221, -255, -232,
- -257,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,
+    0, -244, -253, -252, -251, -250, -249, -248, -247, -246,
+ -245, -241, -240, -239, -238,    0, -237,    0, -231, -224,
+ -223, -225, -222, -221, -226, -220, -227, -219, -254, -228,
+ -218, -257, -232,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,
 };
 final static short yyrindex[] = {                         0,
-    0,   52,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,   56,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,
 };
 final static short yygindex[] = {                         0,
-   37,    0,
+   42,    0,
 };
-final static int YYTABLESIZE=59;
+final static int YYTABLESIZE=64;
 static short yytable[];
 static { yytable();}
 static void yytable(){
 yytable = new short[]{                          3,
     4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
    14,   15,    3,    4,    5,    6,    7,    8,    9,   10,
-   11,   12,   13,   14,   15,   43,   16,   45,   18,   19,
-   20,   21,   22,   23,   24,   25,   26,   27,   32,   16,
-   28,   29,   30,   33,   35,   34,   38,   40,   36,   44,
-   37,    1,   31,   39,    0,    0,   41,    0,   42,
+   11,   12,   13,   14,   15,   44,   16,   17,   47,   19,
+   20,   21,   22,   23,   24,   25,   26,   27,   34,   16,
+   17,   28,   29,   30,   31,   33,   35,   37,   36,   40,
+   42,   38,   45,   39,   48,    1,   41,   32,    0,   43,
+    0,    0,    0,   46,
 };
 }
 static short yycheck[];
@@ -213,14 +214,15 @@ static void yycheck() {
 yycheck = new short[] {                        257,
   258,  259,  260,  261,  262,  263,  264,  265,  266,  267,
   268,  269,  257,  258,  259,  260,  261,  262,  263,  264,
-  265,  266,  267,  268,  269,  281,  284,  285,  283,  283,
+  265,  266,  267,  268,  269,  280,  284,  285,  286,  283,
   283,  283,  283,  283,  283,  283,  283,  283,  270,  284,
-  283,  283,  283,  271,  273,  272,  276,  278,  274,  282,
-  275,    0,   16,  277,   -1,   -1,  279,   -1,  280,
+  285,  283,  283,  283,  283,  283,  271,  273,  272,  276,
+  278,  274,  281,  275,  287,    0,  277,   16,   -1,  279,
+   -1,   -1,   -1,  282,
 };
 }
 final static short YYFINAL=1;
-final static short YYMAXTOKEN=285;
+final static short YYMAXTOKEN=287;
 final static String yyname[] = {
 "end-of-file",null,null,null,null,null,null,null,null,null,null,null,null,null,
 null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,
@@ -243,7 +245,8 @@ null,null,null,"O_DATA_ENTRADA","O_HORA_ENTRADA","O_ENTRADA","O_DATA_SAIDA",
 "O_OPERADOR","O_TIPO","O_DATA_DEBITO","O_CARTAO","C_DATA_ENTRADA",
 "C_HORA_ENTRADA","C_ENTRADA","C_DATA_SAIDA","C_HORA_SAIDA","C_SAIDA",
 "C_IMPORTANCIA","C_VALOR_DESCONTO","C_TAXA_IVA","C_OPERADOR","C_TIPO",
-"C_DATA_DEBITO","C_CARTAO","TEXT","O_TRANSACCAO","C_TRANSACCAO",
+"C_DATA_DEBITO","C_CARTAO","TEXT","O_TRANSACCAO","O_MATRICULA","C_TRANSACCAO",
+"C_MATRICULA",
 };
 final static String yyrule[] = {
 "$accept : identifier",
@@ -251,6 +254,7 @@ final static String yyrule[] = {
 "transaction :",
 "transaction : transaction t_line",
 "t_line : O_DATA_ENTRADA TEXT C_DATA_ENTRADA",
+"t_line : O_MATRICULA TEXT C_MATRICULA",
 "t_line : O_HORA_ENTRADA TEXT C_HORA_ENTRADA",
 "t_line : O_ENTRADA TEXT C_ENTRADA",
 "t_line : O_DATA_SAIDA TEXT C_DATA_SAIDA",
@@ -266,7 +270,7 @@ final static String yyrule[] = {
 "t_line : O_TRANSACCAO transaction C_TRANSACCAO",
 };
 
-//#line 35 "src/main/jflex/Parser.byaccj"
+//#line 36 "src/main/jflex/Parser.byaccj"
 
 private Lexer lexer;
 public ArrayList<Command> commands;
@@ -291,7 +295,7 @@ private int yylex(){
     }
     return returnValue;
 }
-//#line 251 "target/generated-sources/jflex/Parser.java"
+//#line 257 "target/generated-sources/jflex/Parser.java"
 //###############################################################
 // method: yylexdebug : check lexer state
 //###############################################################
@@ -446,8 +450,12 @@ boolean doaction;
       {
 //########## USER-SUPPLIED ACTIONS ##########
 case 1:
-//#line 12 "src/main/jflex/Parser.byaccj"
+//#line 13 "src/main/jflex/Parser.byaccj"
 { commands = (ArrayList<Command>)val_peek(0).obj;}
+break;
+case 2:
+//#line 15 "src/main/jflex/Parser.byaccj"
+{ yyval = new ParserVal(new ArrayList<Command>()); }
 break;
 case 3:
 //#line 16 "src/main/jflex/Parser.byaccj"
@@ -507,9 +515,13 @@ case 16:
 break;
 case 17:
 //#line 31 "src/main/jflex/Parser.byaccj"
+{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+break;
+case 18:
+//#line 32 "src/main/jflex/Parser.byaccj"
 {yyval = new ParserVal(new Transaction((ArrayList<Command>)val_peek(1).obj)); }
 break;
-//#line 464 "target/generated-sources/jflex/Parser.java"
+//#line 478 "target/generated-sources/jflex/Parser.java"
 //########## END OF USER-SUPPLIED ACTIONS ##########
     }//switch
     //#### Now let's reduce... ####

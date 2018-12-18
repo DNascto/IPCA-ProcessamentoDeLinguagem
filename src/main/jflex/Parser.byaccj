@@ -5,30 +5,31 @@
 %token  O_DATA_ENTRADA O_HORA_ENTRADA O_ENTRADA O_DATA_SAIDA O_HORA_SAIDA O_SAIDA O_IMPORTANCIA O_VALOR_DESCONTO O_TAXA_IVA O_OPERADOR O_TIPO O_DATA_DEBITO O_CARTAO
 %token  C_DATA_ENTRADA C_HORA_ENTRADA C_ENTRADA C_DATA_SAIDA C_HORA_SAIDA C_SAIDA C_IMPORTANCIA C_VALOR_DESCONTO C_TAXA_IVA C_OPERADOR C_TIPO C_DATA_DEBITO C_CARTAO
 %token  TEXT
-%token  O_TRANSACCAO C_TRANSACCAO
+%token  O_TRANSACCAO O_MATRICULA
+%token  C_TRANSACCAO C_MATRICULA
 
 %%
 
 identifier: transaction { commands = (ArrayList<Command>)$1.obj;}
 
-transaction: /* epson */
-//  | transaction t_line { commands.add((Command)$2.obj ); }
+transaction: /* epson */  { $$ = new ParserVal(new ArrayList<Command>()); }
         | transaction t_line { ((ArrayList<Command>)$1.obj).add((Command)$2.obj); $$ = $1; }
 
-t_line: O_DATA_ENTRADA    TEXT C_DATA_ENTRADA { $$ = new ParserVal( new Text($2.sval)); }
-    | O_HORA_ENTRADA    TEXT C_HORA_ENTRADA { $$ = new ParserVal( new Text($2.sval)); }
-    | O_ENTRADA         TEXT C_ENTRADA      { $$ = new ParserVal( new Text($2.sval)); }
-    | O_DATA_SAIDA      TEXT C_DATA_SAIDA   { $$ = new ParserVal( new Text($2.sval)); }
-    | O_HORA_SAIDA      TEXT C_HORA_SAIDA   { $$ = new ParserVal( new Text($2.sval)); }
-    | O_SAIDA           TEXT C_SAIDA        { $$ = new ParserVal( new Text($2.sval)); }
-    | O_IMPORTANCIA     TEXT C_IMPORTANCIA  { $$ = new ParserVal( new Text($2.sval)); }
-    | O_VALOR_DESCONTO  TEXT C_VALOR_DESCONTO { $$ = new ParserVal( new Text($2.sval)); }
-    | O_TAXA_IVA        TEXT C_TAXA_IVA     { $$ = new ParserVal( new Text($2.sval)); }
-    | O_OPERADOR        TEXT C_OPERADOR     { $$ = new ParserVal( new Text($2.sval)); }
-    | O_TIPO            TEXT C_TIPO         { $$ = new ParserVal( new Text($2.sval)); }
-    | O_DATA_DEBITO     TEXT C_DATA_DEBITO  { $$ = new ParserVal( new Text($2.sval)); }
-    | O_CARTAO          TEXT C_CARTAO       { $$ = new ParserVal( new Text($2.sval)); }
-    | O_TRANSACCAO  transaction C_TRANSACCAO  {$$ = new ParserVal(new Transaction((ArrayList<Command>)$2.obj)); }
+t_line: O_DATA_ENTRADA    TEXT C_DATA_ENTRADA   { $$ = new ParserVal( new Text($2.sval)); }
+        | O_MATRICULA   TEXT    C_MATRICULA { $$ = new ParserVal( new Text($2.sval)); }
+      | O_HORA_ENTRADA    TEXT C_HORA_ENTRADA   { $$ = new ParserVal( new Text($2.sval)); }
+      | O_ENTRADA         TEXT C_ENTRADA        { $$ = new ParserVal( new Text($2.sval)); }
+      | O_DATA_SAIDA      TEXT C_DATA_SAIDA     { $$ = new ParserVal( new Text($2.sval)); }
+      | O_HORA_SAIDA      TEXT C_HORA_SAIDA     { $$ = new ParserVal( new Text($2.sval)); }
+      | O_SAIDA           TEXT C_SAIDA          { $$ = new ParserVal( new Text($2.sval)); }
+      | O_IMPORTANCIA     TEXT C_IMPORTANCIA    { $$ = new ParserVal( new Text($2.sval)); }
+      | O_VALOR_DESCONTO  TEXT C_VALOR_DESCONTO { $$ = new ParserVal( new Text($2.sval)); }
+      | O_TAXA_IVA        TEXT C_TAXA_IVA       { $$ = new ParserVal( new Text($2.sval)); }
+      | O_OPERADOR        TEXT C_OPERADOR       { $$ = new ParserVal( new Text($2.sval)); }
+      | O_TIPO            TEXT C_TIPO           { $$ = new ParserVal( new Text($2.sval)); }
+      | O_DATA_DEBITO     TEXT C_DATA_DEBITO    { $$ = new ParserVal( new Text($2.sval)); }
+      | O_CARTAO          TEXT C_CARTAO         { $$ = new ParserVal( new Text($2.sval)); }
+      | O_TRANSACCAO  transaction C_TRANSACCAO  {$$ = new ParserVal(new Transaction((ArrayList<Command>)$2.obj)); }
     ;
 
 %%
