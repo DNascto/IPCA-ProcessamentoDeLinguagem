@@ -1,0 +1,58 @@
+%{
+    import java.io.*;
+    import java.util.ArrayList;
+%}
+%token  O_DATA_ENTRADA O_HORA_ENTRADA O_ENTRADA O_DATA_SAIDA O_HORA_SAIDA O_SAIDA O_IMPORTANCIA O_VALOR_DESCONTO O_TAXA_IVA O_OPERADOR O_TIPO O_DATA_DEBITO O_CARTAO
+%token  C_DATA_ENTRADA C_HORA_ENTRADA C_ENTRADA C_DATA_SAIDA C_HORA_SAIDA C_SAIDA C_IMPORTANCIA C_VALOR_DESCONTO C_TAXA_IVA C_OPERADOR C_TIPO C_DATA_DEBITO C_CARTAO
+%token  TEXT
+%token  O_TRANSACCAO C_TRANSACCAO
+
+%%
+
+identifier: transaction { commands = (ArrayList<Command>)$1.obj;}
+
+transaction: /* epson */
+//  | transaction t_line { commands.add((Command)$2.obj ); }
+        | transaction t_line { ((ArrayList<Command>)$1.obj).add((Command)$2.obj); $$ = $1; }
+
+t_line: O_DATA_ENTRADA    TEXT C_DATA_ENTRADA { $$ = new ParserVal( new Text($2.sval)); }
+    | O_HORA_ENTRADA    TEXT C_HORA_ENTRADA { $$ = new ParserVal( new Text($2.sval)); }
+    | O_ENTRADA         TEXT C_ENTRADA      { $$ = new ParserVal( new Text($2.sval)); }
+    | O_DATA_SAIDA      TEXT C_DATA_SAIDA   { $$ = new ParserVal( new Text($2.sval)); }
+    | O_HORA_SAIDA      TEXT C_HORA_SAIDA   { $$ = new ParserVal( new Text($2.sval)); }
+    | O_SAIDA           TEXT C_SAIDA        { $$ = new ParserVal( new Text($2.sval)); }
+    | O_IMPORTANCIA     TEXT C_IMPORTANCIA  { $$ = new ParserVal( new Text($2.sval)); }
+    | O_VALOR_DESCONTO  TEXT C_VALOR_DESCONTO { $$ = new ParserVal( new Text($2.sval)); }
+    | O_TAXA_IVA        TEXT C_TAXA_IVA     { $$ = new ParserVal( new Text($2.sval)); }
+    | O_OPERADOR        TEXT C_OPERADOR     { $$ = new ParserVal( new Text($2.sval)); }
+    | O_TIPO            TEXT C_TIPO         { $$ = new ParserVal( new Text($2.sval)); }
+    | O_DATA_DEBITO     TEXT C_DATA_DEBITO  { $$ = new ParserVal( new Text($2.sval)); }
+    | O_CARTAO          TEXT C_CARTAO       { $$ = new ParserVal( new Text($2.sval)); }
+    | O_TRANSACCAO  transaction C_TRANSACCAO  {$$ = new ParserVal(new Transaction((ArrayList<Command>)$2.obj)); }
+    ;
+
+%%
+
+private Lexer lexer;
+public ArrayList<Command> commands;
+
+public Parser(Reader r){
+    lexer = new Lexer(r,this);
+    commands = new ArrayList<Command>();
+    }
+
+public void yyerror(String error){
+    System.err.println("***ERRO*** " + error);
+}
+
+private int yylex(){
+    int returnValue = -1;
+
+    try{
+        return lexer.yylex();
+    }
+    catch(IOException e){
+        System.err.println("***IO ERROR " + e);
+    }
+    return returnValue;
+}

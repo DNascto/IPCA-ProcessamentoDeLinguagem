@@ -1,0 +1,9 @@
+Main.class
+Value.class
+Lexer.class
+Transaction.class
+Parser.class
+ParserTokens.class
+ParserVal.class
+Text.class
+Command.class
