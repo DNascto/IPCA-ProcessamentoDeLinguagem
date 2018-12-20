@@ -40,14 +40,37 @@
 \<CARTAO\>              { return ParserTokens.O_CARTAO; }
 \<\/CARTAO\>            { return ParserTokens.C_CARTAO; }
 
-\<MATRICULA\>              { return ParserTokens.O_MATRICULA; }
-\<\/MATRICULA\>            { return ParserTokens.C_MATRICULA; }
+
+\<IDENTIFICADOR\>       { return ParserTokens.O_IDENTIFICADOR; }
+\<\/IDENTIFICADOR\>     { return ParserTokens.C_IDENTIFICADOR; }
+\<MATRICULA\>           { return ParserTokens.O_MATRICULA; }
+\<\/MATRICULA\>         { return ParserTokens.C_MATRICULA; }
+\<REF_PAGAMENTO\>       { return ParserTokens.O_REF_PAGAMENTO; }
+\<\/REF_PAGAMENTO\>     { return ParserTokens.C_REF_PAGAMENTO; }
 \<TRANSACCAO\>          { return ParserTokens.O_TRANSACCAO; }
 \<\/TRANSACCAO\>        { return ParserTokens.C_TRANSACCAO; }
 
 
-\<TRANSACCAO\>          { return ParserTokens.O_TRANSACCAO; }
-\<\/TRANSACCAO\>        { return ParserTokens.C_TRANSACCAO; }
+\<CLIENTE\>             { return ParserTokens.O_CLIENTE; }
+\<\/CLIENTE\>           { return ParserTokens.C_CLIENTE; }
+\<NIF\>                 { return ParserTokens.O_NIF; }
+\<\/NIF\>               { return ParserTokens.C_NIF; }
+\<NOME\>                { return ParserTokens.O_NOME; }
+\<\/NOME\>              { return ParserTokens.C_NOME; }
+\<MORADA\>              { return ParserTokens.O_MORADA; }
+\<\/MORADA\>            { return ParserTokens.C_MORADA; }
+\<LOCALIDADE\>          { return ParserTokens.O_LOCALIDADE; }
+\<\/LOCALIDADE\>        { return ParserTokens.C_LOCALIDADE; }
+\<CODIGO_POSTAL\>       { return ParserTokens.O_CODIGO_POSTAL; }
+\<\/CODIGO_POSTAL\>     { return ParserTokens.C_CODIGO_POSTAL; }
+
+
+\<EXTRACTO\>            { return ParserTokens.O_EXTRACTO; }
+\<\/EXTRACTO\>          { return ParserTokens.C_EXTRACTO; }
+\<MES_EMISSAO\>         { return ParserTokens.O_MES_EMISSAO; }
+\<\/MES_EMISSAO\>       { return ParserTokens.C_MES_EMISSAO; }
+\<TOTAL_IVA\>           { return ParserTokens.O_TOTAL_IVA; }
+\<\/TOTAL_IVA\>         { return ParserTokens.C_TOTAL_IVA; }
 
 
 

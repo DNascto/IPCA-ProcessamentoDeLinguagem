@@ -1,18 +1,30 @@
 import java.io.FileInputStream;
 import java.io.*;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String args[]){
         Parser parser = null;
         try {
-            parser = new Parser(new InputStreamReader(new FileInputStream("src/test/test.logo")));
+            parser = new Parser(new InputStreamReader(new FileInputStream("src/test/full.logo")));
         }catch(FileNotFoundException e){
-            System.err.println("File imput not found");
+            System.err.println("File input not found");
             System.exit(1);
         }
         parser.yyparse();
 
+        Extract extract = parser.extract;
+        for (Transaction t: extract.getIdentifiers().get(0).getTransactions()) {
+            System.out.println(t.getSaida());
+        }
+        System.out.println("Ok");
+
+
+        /*for (int i = 0; i < t.trans.size(); i++) {
+            System.out.println(t.trans.get(i));
+        }*/
+/*
         PrintStream file = null;
         try{
             file = new PrintStream("target/output.html");
@@ -26,6 +38,6 @@ public class Main {
             c.addData(file);
         }
         file.println("</table>\n</body>\n</html>");
-        file.toString();
+        */
     }
 }

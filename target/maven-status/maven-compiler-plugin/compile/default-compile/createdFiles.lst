@@ -1,9 +1,12 @@
-Main.class
-Value.class
 Lexer.class
 Transaction.class
-Parser.class
+Client.class
 ParserTokens.class
 ParserVal.class
 Text.class
-Command.class
+Extract.class
+Identifier.class
+Extrato.class
+Main.class
+Parser.class
+Formata.class

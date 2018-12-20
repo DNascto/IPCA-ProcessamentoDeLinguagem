@@ -4,42 +4,74 @@
 %}
 %token  O_DATA_ENTRADA O_HORA_ENTRADA O_ENTRADA O_DATA_SAIDA O_HORA_SAIDA O_SAIDA O_IMPORTANCIA O_VALOR_DESCONTO O_TAXA_IVA O_OPERADOR O_TIPO O_DATA_DEBITO O_CARTAO
 %token  C_DATA_ENTRADA C_HORA_ENTRADA C_ENTRADA C_DATA_SAIDA C_HORA_SAIDA C_SAIDA C_IMPORTANCIA C_VALOR_DESCONTO C_TAXA_IVA C_OPERADOR C_TIPO C_DATA_DEBITO C_CARTAO
-%token  TEXT
-%token  O_TRANSACCAO O_MATRICULA
-%token  C_TRANSACCAO C_MATRICULA
+%token  O_TRANSACCAO O_MATRICULA O_REF_PAGAMENTO O_TOTAL
+%token  C_TRANSACCAO C_MATRICULA C_REF_PAGAMENTO C_TOTAL
+%token  O_EXTRACTO O_MES_EMISSAO O_TOTAL_IVA O_IDENTIFICADOR
+%token  C_EXTRACTO C_MES_EMISSAO C_TOTAL_IVA C_IDENTIFICADOR
+%token  O_CLIENTE O_NIF O_NOME O_MORADA O_LOCALIDADE O_CODIGO_POSTAL TEXT
+%token  C_CLIENTE C_NIF C_NOME C_MORADA C_LOCALIDADE C_CODIGO_POSTAL
 
 %%
 
-identifier: transaction { commands = (ArrayList<Command>)$1.obj;}
+extract: /**/ {$$ = new ParserVal(new Extract());} //identifiers { extrato = (ArrayList<Identifier>)$1.obj;}
+      |  mes_emissao cliente identifiers total total_iva { $$ = $1; $$ = $2; $$ = $3; $$ = $4; $$ = $5;}
+        ;
 
-transaction: /* epson */  { $$ = new ParserVal(new ArrayList<Command>()); }
-        | transaction t_line { ((ArrayList<Command>)$1.obj).add((Command)$2.obj); $$ = $1; }
+mes_emissao:  O_MES_EMISSAO TEXT C_MES_EMISSAO  { $$ = $2; };
+total_iva:    O_TOTAL_IVA   TEXT C_TOTAL_IVA    { $$ = $2; };
 
-t_line: O_DATA_ENTRADA    TEXT C_DATA_ENTRADA   { $$ = new ParserVal( new Text($2.sval)); }
-        | O_MATRICULA   TEXT    C_MATRICULA { $$ = new ParserVal( new Text($2.sval)); }
-      | O_HORA_ENTRADA    TEXT C_HORA_ENTRADA   { $$ = new ParserVal( new Text($2.sval)); }
-      | O_ENTRADA         TEXT C_ENTRADA        { $$ = new ParserVal( new Text($2.sval)); }
-      | O_DATA_SAIDA      TEXT C_DATA_SAIDA     { $$ = new ParserVal( new Text($2.sval)); }
-      | O_HORA_SAIDA      TEXT C_HORA_SAIDA     { $$ = new ParserVal( new Text($2.sval)); }
-      | O_SAIDA           TEXT C_SAIDA          { $$ = new ParserVal( new Text($2.sval)); }
-      | O_IMPORTANCIA     TEXT C_IMPORTANCIA    { $$ = new ParserVal( new Text($2.sval)); }
-      | O_VALOR_DESCONTO  TEXT C_VALOR_DESCONTO { $$ = new ParserVal( new Text($2.sval)); }
-      | O_TAXA_IVA        TEXT C_TAXA_IVA       { $$ = new ParserVal( new Text($2.sval)); }
-      | O_OPERADOR        TEXT C_OPERADOR       { $$ = new ParserVal( new Text($2.sval)); }
-      | O_TIPO            TEXT C_TIPO           { $$ = new ParserVal( new Text($2.sval)); }
-      | O_DATA_DEBITO     TEXT C_DATA_DEBITO    { $$ = new ParserVal( new Text($2.sval)); }
-      | O_CARTAO          TEXT C_CARTAO         { $$ = new ParserVal( new Text($2.sval)); }
-      | O_TRANSACCAO  transaction C_TRANSACCAO  {$$ = new ParserVal(new Transaction((ArrayList<Command>)$2.obj)); }
+cliente: nif nome morada localidade codigo_postal { new Client($1.sval, $2.sval, $3.sval, $4.sval, $5.sval); }
+
+nif:            O_NIF           TEXT C_NIF              { $$ = $2; };
+nome:           O_NOME          TEXT C_NOME             { $$ = $2; };
+morada:         O_MORADA        TEXT C_MORADA           { $$ = $2; };
+localidade:     O_LOCALIDADE    TEXT C_LOCALIDADE       { $$ = $2; };
+codigo_postal:  O_CODIGO_POSTAL TEXT C_CODIGO_POSTAL    { $$ = $2; };
+
+identifiers: /* epson */{ $$ = new ParserVal(new ArrayList<Identifier>()); }
+        | identifiers identifier {((ArrayList<Identifier>)$1.obj).add((Identifier)$2.obj); $$ = $1; }
+        ;
+
+identifier: /* epson */  { $$ = new ParserVal(new ArrayList<Identifier>()); }
+        | matricula ref_pag transactions total { $$ = new ParserVal(new Identifier($1.sval, $2.sval, (ArrayList<Transaction>)$3.obj, $4.sval)); }
+
+matricula:  O_MATRICULA     TEXT C_MATRICULA        { $$ = $2; };
+ref_pag:    O_REF_PAGAMENTO TEXT C_REF_PAGAMENTO    { $$ = $2; };
+total:      O_TOTAL         TEXT C_TOTAL            { $$ = $2; };
+
+transactions: /* epson */  { $$ = new ParserVal(new ArrayList<Transaction>()); }
+        | transactions transacao { ((ArrayList<Transaction>)$1.obj).add((Transaction)$2.obj); $$ = $1; }
+        ;
+
+transacao: dt_entrada hr_entrada entrada dt_saida hr_saida saida importancia valor_desc taxa_iva operador tipo dt_debito cartao
+            {new Transaction($1.sval, $2.sval, $3.sval, $4.sval, $5.sval, $6.sval, $7.sval, $8.sval, $9.sval, $10.sval, $11.sval, $12.sval, $13.sval); }
+      //  |  O_TRANSACCAO  transaction C_TRANSACCAO  { $$ = new ParserVal(new Transaction((ArrayList<Transation>)$2.obj)); }*/
+
+
+dt_entrada: O_DATA_ENTRADA    TEXT C_DATA_ENTRADA   { $$ = $2; };
+hr_entrada: O_HORA_ENTRADA    TEXT C_HORA_ENTRADA   { $$ = $2; };
+entrada:    O_ENTRADA         TEXT C_ENTRADA        { $$ = $2; };
+dt_saida:   O_DATA_SAIDA      TEXT C_DATA_SAIDA     { $$ = $2; };
+hr_saida:   O_HORA_SAIDA      TEXT C_HORA_SAIDA     { $$ = $2; };
+saida:      O_SAIDA           TEXT C_SAIDA          { $$ = $2; };
+importancia: O_IMPORTANCIA     TEXT C_IMPORTANCIA    { $$ = $2; };
+valor_desc: O_VALOR_DESCONTO  TEXT C_VALOR_DESCONTO { $$ = $2; };
+taxa_iva:   O_TAXA_IVA        TEXT C_TAXA_IVA       { $$ = $2; };
+operador:   O_OPERADOR        TEXT C_OPERADOR       { $$ = $2; };
+tipo:       O_TIPO            TEXT C_TIPO           { $$ = $2; };
+dt_debito:  O_DATA_DEBITO     TEXT C_DATA_DEBITO    { $$ = $2; };
+cartao:     O_CARTAO          TEXT C_CARTAO         { $$ = $2; };
     ;
+
 
 %%
 
 private Lexer lexer;
-public ArrayList<Command> commands;
+public Extract extract;
 
 public Parser(Reader r){
     lexer = new Lexer(r,this);
-    commands = new ArrayList<Command>();
+    extract = new Extract();
     }
 
 public void yyerror(String error){

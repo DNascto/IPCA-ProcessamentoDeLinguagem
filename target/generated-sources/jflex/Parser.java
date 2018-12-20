@@ -160,69 +160,94 @@ final ParserVal dup_yyval(ParserVal val)
 //#### end semantic value section ####
 public final static short YYERRCODE=256;
 final static short yylhs[] = {                           -1,
-    0,    1,    1,    2,    2,    2,    2,    2,    2,    2,
-    2,    2,    2,    2,    2,    2,    2,    2,
+    0,    0,    1,    5,    2,    6,    7,    8,    9,   10,
+    3,    3,   11,   11,   12,   13,    4,   14,   14,   15,
+   16,   17,   18,   19,   20,   21,   22,   23,   24,   25,
+   26,   27,   28,
 };
 final static short yylen[] = {                            2,
-    1,    0,    2,    3,    3,    3,    3,    3,    3,    3,
-    3,    3,    3,    3,    3,    3,    3,    3,
+    0,    5,    3,    3,    5,    3,    3,    3,    3,    3,
+    0,    2,    0,    4,    3,    3,    3,    0,    2,   13,
+    3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+    3,    3,    3,
 };
-final static short yydefred[] = {                         2,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    2,    0,    3,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    4,    6,    7,    8,    9,   10,   11,
-   12,   13,   14,   15,   16,   17,   18,    5,
+final static short yydefred[] = {                         0,
+    0,    0,    0,    0,    0,   11,    0,    3,    0,    0,
+    0,    0,    6,    0,    0,    0,   12,    0,    0,    0,
+    0,    0,    0,    0,    2,    0,   18,    7,    0,    0,
+    0,   15,   17,    0,    0,    0,    8,    0,    0,    5,
+    4,   16,    0,   14,   19,    0,    9,    0,    0,    0,
+    0,   10,   21,    0,    0,    0,   22,    0,    0,    0,
+   23,    0,    0,    0,   24,    0,    0,    0,   25,    0,
+    0,    0,   26,    0,    0,    0,   27,    0,    0,    0,
+   28,    0,    0,    0,   29,    0,    0,    0,   30,    0,
+    0,    0,   31,    0,    0,   20,   32,    0,   33,
 };
-final static short yydgoto[] = {                          1,
-    2,   18,
+final static short yydgoto[] = {                          2,
+    3,    6,   10,   16,   25,    7,   12,   21,   31,   40,
+   17,   18,   27,   36,   45,   46,   51,   56,   60,   64,
+   68,   72,   76,   80,   84,   88,   92,   96,
 };
-final static short yysindex[] = {                         0,
-    0, -244, -253, -252, -251, -250, -249, -248, -247, -246,
- -245, -241, -240, -239, -238,    0, -237,    0, -231, -224,
- -223, -225, -222, -221, -226, -220, -227, -219, -254, -228,
- -218, -257, -232,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,
+final static short yysindex[] = {                      -290,
+ -301,    0, -295, -289, -299,    0, -293,    0, -298, -283,
+ -294, -292,    0, -291, -288, -281,    0, -272, -287, -286,
+ -285, -273, -274, -282,    0, -280,    0,    0, -279, -278,
+ -284,    0,    0, -275, -265, -257,    0, -277, -271,    0,
+    0,    0, -270,    0,    0, -232,    0, -269, -242, -268,
+ -228,    0,    0, -239, -267, -224,    0, -233, -264, -221,
+    0, -230, -261, -217,    0, -227, -259, -215,    0, -226,
+ -255, -213,    0, -223, -253, -211,    0, -222, -249, -209,
+    0, -220, -246, -207,    0, -218, -243, -205,    0, -216,
+ -240, -203,    0, -214, -237,    0,    0, -212,    0,
 };
-final static short yyrindex[] = {                         0,
-    0,   56,    0,    0,    0,    0,    0,    0,    0,    0,
+final static short yyrindex[] = {                        69,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,    0,
 };
 final static short yygindex[] = {                         0,
-   42,    0,
+    0,    0,    0,   35,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,
 };
-final static int YYTABLESIZE=64;
+final static int YYTABLESIZE=71;
 static short yytable[];
 static { yytable();}
 static void yytable(){
-yytable = new short[]{                          3,
-    4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
-   14,   15,    3,    4,    5,    6,    7,    8,    9,   10,
-   11,   12,   13,   14,   15,   44,   16,   17,   47,   19,
-   20,   21,   22,   23,   24,   25,   26,   27,   34,   16,
-   17,   28,   29,   30,   31,   33,   35,   37,   36,   40,
-   42,   38,   45,   39,   48,    1,   41,   32,    0,   43,
-    0,    0,    0,   46,
+yytable = new short[]{                         43,
+   14,    1,   15,    4,    5,    9,    8,   11,   13,   20,
+   19,   24,   26,   22,   32,   33,   23,   30,   29,   39,
+   28,   41,   34,   42,   35,   50,   38,   53,   15,   37,
+   55,   57,   47,   48,   49,   59,   54,   58,   61,   63,
+   62,   52,   65,   66,   67,   70,   69,   71,   73,   74,
+   75,   78,   77,   79,   81,   82,   83,   85,   86,   87,
+   89,   90,   91,   93,   94,   95,   97,   98,    1,   99,
+   44,
 };
 }
 static short yycheck[];
 static { yycheck(); }
 static void yycheck() {
 yycheck = new short[] {                        257,
-  258,  259,  260,  261,  262,  263,  264,  265,  266,  267,
-  268,  269,  257,  258,  259,  260,  261,  262,  263,  264,
-  265,  266,  267,  268,  269,  280,  284,  285,  286,  283,
-  283,  283,  283,  283,  283,  283,  283,  283,  270,  284,
-  285,  283,  283,  283,  283,  283,  271,  273,  272,  276,
-  278,  274,  281,  275,  287,    0,  277,   16,   -1,  279,
-   -1,   -1,   -1,  282,
+  284,  292,  286,  305,  300,  305,  296,  301,  307,  302,
+  305,  293,  285,  305,  288,  290,  305,  303,  305,  304,
+  308,  297,  305,  289,  305,  258,  305,  270,  286,  309,
+  259,  271,  310,  305,  305,  260,  305,  305,  272,  261,
+  305,  311,  273,  305,  262,  305,  274,  263,  275,  305,
+  264,  305,  276,  265,  277,  305,  266,  278,  305,  267,
+  279,  305,  268,  280,  305,  269,  281,  305,    0,  282,
+   36,
 };
 }
-final static short YYFINAL=1;
-final static short YYMAXTOKEN=287;
+final static short YYFINAL=2;
+final static short YYMAXTOKEN=311;
 final static String yyname[] = {
 "end-of-file",null,null,null,null,null,null,null,null,null,null,null,null,null,
 null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,
@@ -245,39 +270,58 @@ null,null,null,"O_DATA_ENTRADA","O_HORA_ENTRADA","O_ENTRADA","O_DATA_SAIDA",
 "O_OPERADOR","O_TIPO","O_DATA_DEBITO","O_CARTAO","C_DATA_ENTRADA",
 "C_HORA_ENTRADA","C_ENTRADA","C_DATA_SAIDA","C_HORA_SAIDA","C_SAIDA",
 "C_IMPORTANCIA","C_VALOR_DESCONTO","C_TAXA_IVA","C_OPERADOR","C_TIPO",
-"C_DATA_DEBITO","C_CARTAO","TEXT","O_TRANSACCAO","O_MATRICULA","C_TRANSACCAO",
-"C_MATRICULA",
+"C_DATA_DEBITO","C_CARTAO","O_TRANSACCAO","O_MATRICULA","O_REF_PAGAMENTO",
+"O_TOTAL","C_TRANSACCAO","C_MATRICULA","C_REF_PAGAMENTO","C_TOTAL","O_EXTRACTO",
+"O_MES_EMISSAO","O_TOTAL_IVA","O_IDENTIFICADOR","C_EXTRACTO","C_MES_EMISSAO",
+"C_TOTAL_IVA","C_IDENTIFICADOR","O_CLIENTE","O_NIF","O_NOME","O_MORADA",
+"O_LOCALIDADE","O_CODIGO_POSTAL","TEXT","C_CLIENTE","C_NIF","C_NOME","C_MORADA",
+"C_LOCALIDADE","C_CODIGO_POSTAL",
 };
 final static String yyrule[] = {
-"$accept : identifier",
-"identifier : transaction",
-"transaction :",
-"transaction : transaction t_line",
-"t_line : O_DATA_ENTRADA TEXT C_DATA_ENTRADA",
-"t_line : O_MATRICULA TEXT C_MATRICULA",
-"t_line : O_HORA_ENTRADA TEXT C_HORA_ENTRADA",
-"t_line : O_ENTRADA TEXT C_ENTRADA",
-"t_line : O_DATA_SAIDA TEXT C_DATA_SAIDA",
-"t_line : O_HORA_SAIDA TEXT C_HORA_SAIDA",
-"t_line : O_SAIDA TEXT C_SAIDA",
-"t_line : O_IMPORTANCIA TEXT C_IMPORTANCIA",
-"t_line : O_VALOR_DESCONTO TEXT C_VALOR_DESCONTO",
-"t_line : O_TAXA_IVA TEXT C_TAXA_IVA",
-"t_line : O_OPERADOR TEXT C_OPERADOR",
-"t_line : O_TIPO TEXT C_TIPO",
-"t_line : O_DATA_DEBITO TEXT C_DATA_DEBITO",
-"t_line : O_CARTAO TEXT C_CARTAO",
-"t_line : O_TRANSACCAO transaction C_TRANSACCAO",
+"$accept : extract",
+"extract :",
+"extract : mes_emissao cliente identifiers total total_iva",
+"mes_emissao : O_MES_EMISSAO TEXT C_MES_EMISSAO",
+"total_iva : O_TOTAL_IVA TEXT C_TOTAL_IVA",
+"cliente : nif nome morada localidade codigo_postal",
+"nif : O_NIF TEXT C_NIF",
+"nome : O_NOME TEXT C_NOME",
+"morada : O_MORADA TEXT C_MORADA",
+"localidade : O_LOCALIDADE TEXT C_LOCALIDADE",
+"codigo_postal : O_CODIGO_POSTAL TEXT C_CODIGO_POSTAL",
+"identifiers :",
+"identifiers : identifiers identifier",
+"identifier :",
+"identifier : matricula ref_pag transactions total",
+"matricula : O_MATRICULA TEXT C_MATRICULA",
+"ref_pag : O_REF_PAGAMENTO TEXT C_REF_PAGAMENTO",
+"total : O_TOTAL TEXT C_TOTAL",
+"transactions :",
+"transactions : transactions transacao",
+"transacao : dt_entrada hr_entrada entrada dt_saida hr_saida saida importancia valor_desc taxa_iva operador tipo dt_debito cartao",
+"dt_entrada : O_DATA_ENTRADA TEXT C_DATA_ENTRADA",
+"hr_entrada : O_HORA_ENTRADA TEXT C_HORA_ENTRADA",
+"entrada : O_ENTRADA TEXT C_ENTRADA",
+"dt_saida : O_DATA_SAIDA TEXT C_DATA_SAIDA",
+"hr_saida : O_HORA_SAIDA TEXT C_HORA_SAIDA",
+"saida : O_SAIDA TEXT C_SAIDA",
+"importancia : O_IMPORTANCIA TEXT C_IMPORTANCIA",
+"valor_desc : O_VALOR_DESCONTO TEXT C_VALOR_DESCONTO",
+"taxa_iva : O_TAXA_IVA TEXT C_TAXA_IVA",
+"operador : O_OPERADOR TEXT C_OPERADOR",
+"tipo : O_TIPO TEXT C_TIPO",
+"dt_debito : O_DATA_DEBITO TEXT C_DATA_DEBITO",
+"cartao : O_CARTAO TEXT C_CARTAO",
 };
 
-//#line 36 "src/main/jflex/Parser.byaccj"
+//#line 68 "src/main/jflex/Parser.byaccj"
 
 private Lexer lexer;
-public ArrayList<Command> commands;
+public Extract extract;
 
 public Parser(Reader r){
     lexer = new Lexer(r,this);
-    commands = new ArrayList<Command>();
+    extract = new Extract();
     }
 
 public void yyerror(String error){
@@ -295,7 +339,7 @@ private int yylex(){
     }
     return returnValue;
 }
-//#line 257 "target/generated-sources/jflex/Parser.java"
+//#line 325 "target/generated-sources/jflex/Parser.java"
 //###############################################################
 // method: yylexdebug : check lexer state
 //###############################################################
@@ -450,78 +494,138 @@ boolean doaction;
       {
 //########## USER-SUPPLIED ACTIONS ##########
 case 1:
-//#line 13 "src/main/jflex/Parser.byaccj"
-{ commands = (ArrayList<Command>)val_peek(0).obj;}
+//#line 16 "src/main/jflex/Parser.byaccj"
+{yyval = new ParserVal(new Extract());}
 break;
 case 2:
-//#line 15 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal(new ArrayList<Command>()); }
+//#line 17 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(4); yyval = val_peek(3); yyval = val_peek(2); yyval = val_peek(1); yyval = val_peek(0);}
 break;
 case 3:
-//#line 16 "src/main/jflex/Parser.byaccj"
-{ ((ArrayList<Command>)val_peek(1).obj).add((Command)val_peek(0).obj); yyval = val_peek(1); }
+//#line 20 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
 break;
 case 4:
-//#line 18 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 21 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
 break;
 case 5:
-//#line 19 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 23 "src/main/jflex/Parser.byaccj"
+{ new Client(val_peek(4).sval, val_peek(3).sval, val_peek(2).sval, val_peek(1).sval, val_peek(0).sval); }
 break;
 case 6:
-//#line 20 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 25 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
 break;
 case 7:
-//#line 21 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 26 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
 break;
 case 8:
-//#line 22 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 27 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
 break;
 case 9:
-//#line 23 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 28 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
 break;
 case 10:
-//#line 24 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 29 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
 break;
 case 11:
-//#line 25 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 31 "src/main/jflex/Parser.byaccj"
+{ yyval = new ParserVal(new ArrayList<Identifier>()); }
 break;
 case 12:
-//#line 26 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 32 "src/main/jflex/Parser.byaccj"
+{((ArrayList<Identifier>)val_peek(1).obj).add((Identifier)val_peek(0).obj); yyval = val_peek(1); }
 break;
 case 13:
-//#line 27 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 35 "src/main/jflex/Parser.byaccj"
+{ yyval = new ParserVal(new ArrayList<Identifier>()); }
 break;
 case 14:
-//#line 28 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 36 "src/main/jflex/Parser.byaccj"
+{ yyval = new ParserVal(new Identifier(val_peek(3).sval, val_peek(2).sval, (ArrayList<Transaction>)val_peek(1).obj, val_peek(0).sval)); }
 break;
 case 15:
-//#line 29 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 38 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
 break;
 case 16:
-//#line 30 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 39 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
 break;
 case 17:
-//#line 31 "src/main/jflex/Parser.byaccj"
-{ yyval = new ParserVal( new Text(val_peek(1).sval)); }
+//#line 40 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
 break;
 case 18:
-//#line 32 "src/main/jflex/Parser.byaccj"
-{yyval = new ParserVal(new Transaction((ArrayList<Command>)val_peek(1).obj)); }
+//#line 42 "src/main/jflex/Parser.byaccj"
+{ yyval = new ParserVal(new ArrayList<Transaction>()); }
 break;
-//#line 478 "target/generated-sources/jflex/Parser.java"
+case 19:
+//#line 43 "src/main/jflex/Parser.byaccj"
+{ ((ArrayList<Transaction>)val_peek(1).obj).add((Transaction)val_peek(0).obj); yyval = val_peek(1); }
+break;
+case 20:
+//#line 47 "src/main/jflex/Parser.byaccj"
+{new Transaction(val_peek(12).sval, val_peek(11).sval, val_peek(10).sval, val_peek(9).sval, val_peek(8).sval, val_peek(7).sval, val_peek(6).sval, val_peek(5).sval, val_peek(4).sval, val_peek(3).sval, val_peek(2).sval, val_peek(1).sval, val_peek(0).sval); }
+break;
+case 21:
+//#line 51 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 22:
+//#line 52 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 23:
+//#line 53 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 24:
+//#line 54 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 25:
+//#line 55 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 26:
+//#line 56 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 27:
+//#line 57 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 28:
+//#line 58 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 29:
+//#line 59 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 30:
+//#line 60 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 31:
+//#line 61 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 32:
+//#line 62 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+case 33:
+//#line 63 "src/main/jflex/Parser.byaccj"
+{ yyval = val_peek(1); }
+break;
+//#line 606 "target/generated-sources/jflex/Parser.java"
 //########## END OF USER-SUPPLIED ACTIONS ##########
     }//switch
     //#### Now let's reduce... ####
